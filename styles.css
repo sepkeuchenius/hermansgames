@@ -19,3 +19,6 @@ border-radius: 10px;
 padding: 20px;
 box-sizing: border-box;
 }
+body{
+  min-height: 0 !important;
+}
