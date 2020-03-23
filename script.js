@@ -11,7 +11,11 @@ games.onSnapshot(function(doc) {
 function join(){
   currentUser = $('#name').val()
   if(currentUser.length>0){
-    games.update({online:field.arrayUnion(currentUser)})
+    games.update({online:field.arrayUnion(currentUser)}).then(function(){
+      games.get().then(function(doc){
+        reload(doc.data())
+      })
+      })
 
 
     $('#landing').hide()
@@ -35,6 +39,7 @@ function leave(){
   currentUser = ''
 }
 function reload(data){
+
   $('#online').text('')
   var users = data.online;
   for(var i in users){
