@@ -40,5 +40,5 @@ function reload(data){
   for(var i in users){
     $('#online').text($('#online').text() + users[i] + ', ')
   }
-  $('#online').text($('#online').text().substring(0, $('#online').text().length -3))
+  $('#online').text($('#online').text().substring(0, $('#online').text().length -2))
 }
