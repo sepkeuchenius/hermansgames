@@ -1,6 +1,21 @@
 body{
   background: #ebebeb;
 }
+#landing{
+  /* padding-left: 40%; */
+}
 #home{
-  padding: 20px;
+  padding-left: 40px;
+}
+#leave{
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+#online_card{
+  background: white;
+width: calc(100% - 40px);
+border-radius: 10px;
+padding: 20px;
+box-sizing: border-box;
 }

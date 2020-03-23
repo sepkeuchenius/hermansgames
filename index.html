@@ -9,23 +9,28 @@
 <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
 </head>
 <body>
+
   <div id='landing'>
   <center>
-  <h4>Welkom bij de Hermansgames</h4>
+  <h4>Hermansgames &nbsp<span style='color: rgb(76,175,80);'>#online</span></h4>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
   <input class="mdl-textfield__input" type="text" id="name">
   <label class="mdl-textfield__label" for="name">Naam</label>
 </div>
 <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='join()'>Join</button>
 </div>
 <div id='home' style='display:none'>
-  <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick= 'leave()'>Leave</button>
+
+
+  <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick= 'leave()' id='leave'>Leave</button>
 <h4>Hoi, <span id= 'greeting'></span>!</h4>
 
 <br><br><br>
-<h5>Online Spelers:</h5>
+<div id='online_card'>
+<h5 style='margin-top: 0'>Online Spelers:</h5>
 <span id="online"></span>
+</div>
 </div>
 
 
