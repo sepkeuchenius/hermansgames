@@ -47,3 +47,8 @@ function reload(data){
   }
   $('#online').text($('#online').text().substring(0, $('#online').text().length -2))
 }
+function begin(){
+  $('#home').hide()
+ $('#invullen').show()
+
+}
