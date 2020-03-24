@@ -8,6 +8,12 @@ var field = firebase.firestore.FieldValue
 games.onSnapshot(function(doc) {
         reload(doc.data())
 });
+$('#term1, #term2, #term3').on('change', checkterms);
+function checkterms(){
+  if($('#term1').val() == $('#term2').val() && $('#term2').val().length > 0 || $('#term1').val() == $('#term3').val() && $('#term1').val().length > 0|| $('#term2').val() == $('#term3').val() && $('#term2').val().length > 0){
+    alert('Voer 3 verschillende dingen in!')
+  }
+}
 function join(){
   currentUser = $('#name').val()
   if(currentUser.length>0){
@@ -49,6 +55,5 @@ function reload(data){
 }
 function begin(){
   $('#home').hide()
- $('#invullen').show()
-
+  $('#invullen').show()
 }
