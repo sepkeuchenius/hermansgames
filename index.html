@@ -52,20 +52,29 @@
 <div id='waiting' style='display: none;'>
 <h3 class= 'green'>Wachten op de anderen...</h3>
 <div id='ready_card'>
-  <h5 style='margin-top: 0'>Spelers klaar:</h5>
+  <h5 style='margin-top: 0'>Ready:</h5>
 <span id='ready'></span>
 </div>
 </div>
 <div id='lastCount' style='display:none;'>
   <div id='first'>
     <h5>We gaan bijna beginnen!</h5>
-    <h6><span id='first_player'></span> is als eerst aan de beurt</h6>
-    <button class='mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='start()'>Start</button>
+    <h6><span id='first_player'></span> is aan de beurt</h6>
+    <button class='mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='start()' style="display:none;" id='start'>Start</button>
   </div>
 </div>
-<div id='round1'></div>
-<div id='round2'></div>
-<div id='round3'></div>
+<div id='sleepingRound' style="display:none">
+  <h5>Wacht</h5>
+  <h6><span id='current_player'></span> is aan de beurt</h6>
+</div>
+<div id='round' style='display: none;'>
+  <h5>Zorg ervoor dat de anderen je woord raden!</h5>
+<div id='termCard'></div><br>
+<button class='mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='nextTerm()'>Volgende</button>
+<br>
+<div class='roundCard'>Ronde <span id='round_number'></span></div>
+</div>
+
 <img src='assets/icon-512.png' style='width: 100px; position: absolute; bottom:40px; right:40px'>
 
 

@@ -7,6 +7,8 @@ var currentUser = ''
 var userStage =0;
 var field = firebase.firestore.FieldValue
 var interval;
+var yourturn = false;
+var user_player;
 games.onSnapshot(function(doc) {
         reload(doc.data())
 });
@@ -23,7 +25,8 @@ function reload_ready(data){
   var stage= data.stage;
   if(currentUser){
   if(stage == 1 && userStage != 1){
-    alert('Het spel is begonnen!')
+
+    userStage = 1;
     $('#home').hide()
     $('#invullen').show()
   }
@@ -36,10 +39,7 @@ function reload_ready(data){
       $('#start').show()
     }
   }
-  else if(stage == 3 && userStage != 3){
-    $('#round1').show()
 
-  }
   if(data.countdown > 0 && $('#countdown').text() == 0){
     $('#countdown').show()
     var i = data.countdown;
@@ -53,6 +53,31 @@ function reload_ready(data){
     },1000)
 
   }
+  if(data.stage == 4 || data.stage==6){
+    //break
+    $('#round').hide()
+    $('#sleepingRound').hide()
+    $('#lastCount').show()
+    if(currentUser == data.current_player){
+      $('#start').hide()
+    }
+    game.get().then(function(doc){
+      $('#first_player').text(doc.data().current_player)
+    })
+  }
+  if(data.current_player == currentUser && (data.stage == 3 || data.stage == 5 || data.stage == 7) && !yourturn){
+    start();
+  }
+
+  if(data.current_player != user_player && data.current_player != currentUser && data.stage > 2){
+    $('#current_player').text(data.current_player);
+    $('#round').hide()
+    $('#sleepingRound').show()
+    $('#start').hide()
+    userStage = data.stage;
+  }
+  else if(data.current_player != user_player && data.current_player == currentUser){
+}
 }
 }
 function join(){
@@ -90,16 +115,22 @@ function reload(data){
 //  $('#online').text($('#online').text().substring(0, $('#online').text().length -2))
 }
 function begin(){
+  game.update({'ready_players': [], 'stage': 0, 'terms': [], 'terms_copy': []})
   $('#home').hide()
   $('#invullen').show()
   userStage = 1;
   game.get().then(function(doc){
-    var first_player = doc.data().ready_players[0];
-    game.update({'stage': 1, 'countdown': 29, 'current_player': first_player});
+
+    game.update({'stage': 1, 'countdown': 29});
     window.setTimeout(function(){
       $('#countdown').text(0);
       clearInterval(interval)
-      game.update({'stage': 2, 'countdown': 0, 'terms_copy': doc.data().terms})
+      game.get().then(function(doc){
+        var first_player = doc.data().ready_players[0];
+        game.update({'stage': 2, 'countdown': 0, 'terms_copy': doc.data().terms, 'current_player': first_player})
+        $('#round_number').text('1')
+      })
+
     }, 30000)
   })
 
@@ -144,18 +175,66 @@ function klaar(){
       })
 
   }
- 
+
 })
 }
-
+var time = true;
 function start(){
   // you are now in a round!
-  userStage=3;
-  $('#round1').show();
+  yourturn = true;
+  console.log('starting')
+  $('#lastCount').hide()
+  $('#round').show();
+  game.update({'countdown': 60})
+  time = true;
+  window.setTimeout(function(){
+    yourturn = false;
+    time = false
+    game.get().then(function(doc){
+      var index=  doc.data().ready_players.indexOf(currentUser);
+      game.update({'current_player': doc.data().ready_players[index+1], 'countdown': 0})
+    })
+
+  }, 60000);
+  nextTerm()
+}
+function nextTerm() {
+  console.log('next term')
+  if(time){
   game.get().then(function(doc){
     var terms = doc.data().terms
-    game.update({'stage': 3});
+    //get random term
+    if(terms.length == 0){
+      nextRound()
+      return;
+    }
+    var term = terms[Math.floor(Math.random()*terms.length)];
+    console.log(term);
+    //remove term from terms list
+    game.update({'terms': field.arrayRemove(term)});
+    $('#termCard').text(term)
   })
-
+}
+  else{
+    //
+  }
+}
+function nextRound(){
+  if(userStage>6){
+    endGame()
+  }
+  else{
+    game.get().then(function(doc){
+      var data= doc.data()
+      game.update({
+        'stage': data.stage + 1,
+        'terms': data.terms_copy,
+        'current_player': data.ready_players[0]
+      })
+    })
+    $('#round_number').text(Number($('#round_number').text()) + 1)
+  }
+}
+function endGame(){
 
 }

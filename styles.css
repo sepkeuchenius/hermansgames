@@ -4,7 +4,7 @@ body{
 #landing{
   /* padding-left: 40%; */
 }
-#home, #invullen, #waiting, #lastCount{
+#home, #invullen, #waiting, #lastCount, #round, #sleepingRound{
   padding-left: 40px;
 }
 #leave{
@@ -40,6 +40,20 @@ body{
   margin-bottom:5px;
   border-radius:5px;
 }
-#first_player{
+#first_player, #current_player{
   color: rgb(76, 175, 80);
+}
+.roundCard{
+  margin-top: 100px;
+}
+#termCard{
+  text-align: center;
+  /* width: 90%; */
+  /* background: #eee; */
+  font-size: 2em;
+  color: rgb(76, 175, 80);
+  margin: 0 auto;
+  margin-left: -40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
