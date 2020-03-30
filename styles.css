@@ -4,7 +4,7 @@ body{
 #landing{
   /* padding-left: 40%; */
 }
-#home, #invullen{
+#home, #invullen, #waiting, #lastCount{
   padding-left: 40px;
 }
 #leave{
@@ -12,7 +12,7 @@ body{
   bottom: 40px;
   left: 40px;
 }
-#online_card{
+#online_card, #ready_card{
   background: white;
 width: calc(100% - 40px);
 border-radius: 10px;
@@ -21,4 +21,25 @@ box-sizing: border-box;
 }
 body{
   min-height: 0 !important;
+}
+.green{
+  color: rgb(76,175,80);
+}
+#countdown{
+  color: rgb(76,175,80);
+  font-size: 2em;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+.user{
+  /* width:80%; */
+  background: #eee;
+  display: block;
+  padding: 10px;
+  margin-bottom:5px;
+  border-radius:5px;
+}
+#first_player{
+  color: rgb(76, 175, 80);
 }

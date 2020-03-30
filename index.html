@@ -9,7 +9,7 @@
 <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
 </head>
 <body>
-
+  <div id='countdown' style="display:none"></div>
   <div id='landing'>
   <center>
   <h4>Hermansgames &nbsp<span style='color: rgb(76,175,80);'>#online</span></h4>
@@ -30,27 +30,43 @@
 <span id="online"></span>
 </div>
 
-
-<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='begin()'>Begin</button>
+<br>
+<button class='mdl-button mdl-js-button mdl-button--primary mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='begin()'>Begin</button>
 </div>
 <div id='invullen' style='display:none'>
 <h3>Voer 3 dingen in</h3>
 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
 <input class="mdl-textfield__input" type="text" id="term1">
 <label class="mdl-textfield__label" for="term1">1</label>
-</div>
+</div><br><br>
 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
 <input class="mdl-textfield__input" type="text" id="term2">
 <label class="mdl-textfield__label" for="term2">2</label>
-</div>
+</div><br><br>
 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
 <input class="mdl-textfield__input" type="text" id="term3">
 <label class="mdl-textfield__label" for="term3">3</label>
+</div><br><br>
+<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='klaar()'>Klaar</button>
+</div>
+<div id='waiting' style='display: none;'>
+<h3 class= 'green'>Wachten op de anderen...</h3>
+<div id='ready_card'>
+  <h5 style='margin-top: 0'>Spelers klaar:</h5>
+<span id='ready'></span>
+</div>
+</div>
+<div id='lastCount' style='display:none;'>
+  <div id='first'>
+    <h5>We gaan bijna beginnen!</h5>
+    <h6><span id='first_player'></span> is als eerst aan de beurt</h6>
+    <button class='mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='start()'>Start</button>
+  </div>
 </div>
 <div id='round1'></div>
 <div id='round2'></div>
 <div id='round3'></div>
-
+<img src='assets/icon-512.png' style='width: 100px; position: absolute; bottom:40px; right:40px'>
 
 
 </center>
