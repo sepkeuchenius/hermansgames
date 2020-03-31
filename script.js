@@ -2,6 +2,7 @@ var leden = db.collection("leden").doc("2WZA7jq9QM4YfaQfzmVg")
 var events = db.collection("events").doc("w53rEPYliAS9TeEZWmne")
 var stamnames = db.collection("stamnaam").doc("RNO5xfQXLWlyzu4HW75c")
 var game =  db.collection("hermansgames").doc("games")
+game.OnDisconnect(game.update({'ping': 100}))
 var currentUser = ''
 var userStage =0;
 var field = firebase.firestore.FieldValue
@@ -16,12 +17,19 @@ game.onSnapshot(function(doc){
 game.get().then(function (doc) {
   reload(doc.data())
 })
+// window.setInterval(function(){
+//   game.update({'ping': Math.random()})
+// }, 1000)
 function stuur(){
   game.update({'terms': field.arrayUnion($('#card').val())})
-  alert('Gelukt!')
+  $('#stuur').text('Gelukt')
+  window.setTimeout(function(){
+      $('#stuur').text('Stuur')
+  },1000)
   $('#card').val('')
 }
 function reload(data){
+
   stage = data.stage;
   console.log(stage)
   $('#round').text(stage)

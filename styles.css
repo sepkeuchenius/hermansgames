@@ -21,8 +21,9 @@ box-sizing: border-box;
 }
 body{
   min-height: 0 !important;
+  min-width: 0 !important;
   max-width: 500px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 .green{
   color: rgb(76,175,80);
@@ -97,14 +98,26 @@ body{
 }
 .red{
   color: red !important;
+  margin-bottom: 0 !important;
   /* margin-left: 50px !important; */
   /* text-align: center !important; */
 }
 #actions{
+position: absolute;
+bottom: 40px;
+margin-left: 5%;
   text-align: center;
 }
 #ronde{
   width: 90%;
   padding-left: 40px;
   margin: 0 auto;
+}
+#logo, #header{
+  display: inline-block;
+}
+#logo{
+  margin-bottom: 10px;
+  /* float: left; */
+  margin-right: 10px;
 }

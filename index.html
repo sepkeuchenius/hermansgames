@@ -12,16 +12,17 @@
   <div id='countdown' style="display:none"></div>
   <div id='landing'>
   <center>
-  <h4>Hermansgames &nbsp<span style='color: rgb(76,175,80);'>#online</span></h4>
+    <img src='assets/icon-512.png' style='width: 40px;' id='logo'>
+  <h4 id='header'>Hermansgames &nbsp<span style='color: rgb(76,175,80);'>#online</span></h4>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
   <input class="mdl-textfield__input" type="text" id="card">
   <label class="mdl-textfield__label" for="card">Kaartje</label>
 </div>
-<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='stuur()'>Stuur</button>
+<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' id='stuur' onclick='stuur()'>Stuur</button>
 </div>
 <div id='cards'>
-  <h5>Toon een kaart</h5>
+  <h5>Pak een kaart</h5>
 
   <div id='termCard'>?</div>
   <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' id= 'show' onclick='show()'>Toon</button>
@@ -45,7 +46,6 @@
   <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect score red' onclick='newGame()'>Nieuw Spel</button>
   <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect score red' onclick='nextRound()'>Volgende Ronde</button>
 </div>
-<img src='assets/icon-512.png' style='width: 100px; position: absolute; bottom:40px; right:40px'>
 
 
 </center>
