@@ -4,7 +4,7 @@ body{
 #landing{
   /* padding-left: 40%; */
 }
-#home, #invullen, #waiting, #lastCount, #round, #sleepingRound{
+#home, #invullen, #waiting, #lastCount, #round, #sleepingRound, #cards, #score{
   padding-left: 40px;
 }
 #leave{
@@ -21,6 +21,8 @@ box-sizing: border-box;
 }
 body{
   min-height: 0 !important;
+  max-width: 500px;
+  margin: 0 auto;
 }
 .green{
   color: rgb(76,175,80);
@@ -48,12 +50,61 @@ body{
 }
 #termCard{
   text-align: center;
-  /* width: 90%; */
-  /* background: #eee; */
+  width: 90%;
+  background: #eee;
   font-size: 2em;
   color: rgb(76, 175, 80);
+  /* margin: 0  auto; */
   margin: 0 auto;
-  margin-left: -40px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  /* margin-left: -40px; */
+  border-radius: 5px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 25px;
+}#cards, #score, #actions{
+  /* text-align: center; */
+  background: white;
+  width: 90%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#scorekeeper{
+  margin-left: 100px;
+}
+.score{
+  display: inline-block;
+}
+.button{
+  font-size: 2em !important;
+  margin-bottom: 10px !important;
+  /* width: 20px !important; */
+  /* padding-left: 0 !important; */
+}
+#scoreCard{
+  font-size: 2em;
+  /* color: rgb(76, 175, 80); */
+
+}
+.score, #scorekeeper{
+  /* margin: 0 auto; */
+  display: inline-block;
+}
+.red{
+  color: red !important;
+  /* margin-left: 50px !important; */
+  /* text-align: center !important; */
+}
+#actions{
+  text-align: center;
+}
+#ronde{
+  width: 90%;
+  padding-left: 40px;
+  margin: 0 auto;
 }

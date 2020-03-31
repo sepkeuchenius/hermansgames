@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>Hermansgames</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base target="_top">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-light_green.min.css">
+<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+</head>
+<body>
+  <div id='countdown' style="display:none"></div>
+  <div id='landing'>
+  <center>
+  <h4>Hermansgames &nbsp<span style='color: rgb(76,175,80);'>#online</span></h4>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
+  <input class="mdl-textfield__input" type="text" id="name">
+  <label class="mdl-textfield__label" for="name">Naam</label>
+</div>
+<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='join()'>Join</button>
+</div>
+<div id='home' style='display:none'>
+  <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick= 'leave()' id='leave'>Leave</button>
+<h4>Hoi, <span id= 'greeting'></span>!</h4>
+
+<br><br><br>
+<div id='online_card'>
+<h5 style='margin-top: 0'>Online Spelers:</h5>
+<span id="online"></span>
+</div>
+
+<br>
+<button class='mdl-button mdl-js-button mdl-button--primary mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='begin()'>Begin</button>
+</div>
+<div id='invullen' style='display:none'>
+<h3>Voer 3 dingen in</h3>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
+<input class="mdl-textfield__input" type="text" id="term1">
+<label class="mdl-textfield__label" for="term1">1</label>
+</div><br><br>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
+<input class="mdl-textfield__input" type="text" id="term2">
+<label class="mdl-textfield__label" for="term2">2</label>
+</div><br><br>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
+<input class="mdl-textfield__input" type="text" id="term3">
+<label class="mdl-textfield__label" for="term3">3</label>
+</div><br><br>
+<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='klaar()'>Klaar</button>
+</div>
+<div id='waiting' style='display: none;'>
+<h3 class= 'green'>Wachten op de anderen...</h3>
+<div id='ready_card'>
+  <h5 style='margin-top: 0'>Ready:</h5>
+<span id='ready'></span>
+</div>
+</div>
+<div id='lastCount' style='display:none;'>
+  <div id='first'>
+    <h5>We gaan bijna beginnen!</h5>
+    <h6><span id='first_player'></span> is aan de beurt</h6>
+    <button class='mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='start()' style="display:none;" id='start'>Start</button>
+  </div>
+</div>
+<div id='sleepingRound' style="display:none">
+  <h5>Wacht</h5>
+  <h6><span id='current_player'></span> is aan de beurt</h6>
+</div>
+<div id='round' style='display: none;'>
+  <h5>Zorg ervoor dat de anderen je woord raden!</h5>
+<div id='termCard'></div><br>
+<button class='mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='nextTerm()'>Volgende</button>
+<br>
+<div class='roundCard'>Ronde <span id='round_number'></span></div>
+</div>
+
+<img src='assets/icon-512.png' style='width: 100px; position: absolute; bottom:40px; right:40px'>
+
+
+</center>
+  <script>
+    <!-- // Initialize Firebase
+
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDUscDIlAB5WsjRULwUbNnzD2QwmxE7zRc",
+      authDomain: "hermansstam.firebaseapp.com",
+      databaseURL: "https://hermansstam.firebaseio.com",
+      projectId: "hermansstam",
+      storageBucket: "hermansstam.appspot.com",
+      messagingSenderId: "874549266316"
+    };
+    var app = firebase.initializeApp(config);
+    var db = firebase.firestore(app);
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script defer="" src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

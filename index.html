@@ -15,66 +15,36 @@
   <h4>Hermansgames &nbsp<span style='color: rgb(76,175,80);'>#online</span></h4>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
-  <input class="mdl-textfield__input" type="text" id="name">
-  <label class="mdl-textfield__label" for="name">Naam</label>
+  <input class="mdl-textfield__input" type="text" id="card">
+  <label class="mdl-textfield__label" for="card">Kaartje</label>
 </div>
-<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='join()'>Join</button>
+<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='stuur()'>Stuur</button>
 </div>
-<div id='home' style='display:none'>
-  <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick= 'leave()' id='leave'>Leave</button>
-<h4>Hoi, <span id= 'greeting'></span>!</h4>
+<div id='cards'>
+  <h5>Toon een kaart</h5>
 
-<br><br><br>
-<div id='online_card'>
-<h5 style='margin-top: 0'>Online Spelers:</h5>
-<span id="online"></span>
-</div>
+  <div id='termCard'>?</div>
+  <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' id= 'show' onclick='show()'>Toon</button>
+  <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='next()'>Volgende</button>
 
-<br>
-<button class='mdl-button mdl-js-button mdl-button--primary mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='begin()'>Begin</button>
 </div>
-<div id='invullen' style='display:none'>
-<h3>Voer 3 dingen in</h3>
-<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
-<input class="mdl-textfield__input" type="text" id="term1">
-<label class="mdl-textfield__label" for="term1">1</label>
-</div><br><br>
-<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
-<input class="mdl-textfield__input" type="text" id="term2">
-<label class="mdl-textfield__label" for="term2">2</label>
-</div><br><br>
-<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
-<input class="mdl-textfield__input" type="text" id="term3">
-<label class="mdl-textfield__label" for="term3">3</label>
-</div><br><br>
-<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='klaar()'>Klaar</button>
-</div>
-<div id='waiting' style='display: none;'>
-<h3 class= 'green'>Wachten op de anderen...</h3>
-<div id='ready_card'>
-  <h5 style='margin-top: 0'>Ready:</h5>
-<span id='ready'></span>
+<div id= 'score'>
+  <h5 class="score">Score</h5>
+  <div id='scorekeeper'>
+    <center>
+  <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect score button' onclick='scoreMin()'>-</button>
+  <div id='scoreCard' class="score">0</div>
+  <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect score button' onclick='scorePlus()'>+</button>
+</center>
 </div>
 </div>
-<div id='lastCount' style='display:none;'>
-  <div id='first'>
-    <h5>We gaan bijna beginnen!</h5>
-    <h6><span id='first_player'></span> is aan de beurt</h6>
-    <button class='mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='start()' style="display:none;" id='start'>Start</button>
-  </div>
+<div id='ronde'>
+<h5>Ronde <span id='round'>1</span></h5>
 </div>
-<div id='sleepingRound' style="display:none">
-  <h5>Wacht</h5>
-  <h6><span id='current_player'></span> is aan de beurt</h6>
+<div id='actions'>
+  <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect score red' onclick='newGame()'>Nieuw Spel</button>
+  <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect score red' onclick='nextRound()'>Volgende Ronde</button>
 </div>
-<div id='round' style='display: none;'>
-  <h5>Zorg ervoor dat de anderen je woord raden!</h5>
-<div id='termCard'></div><br>
-<button class='mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect' onclick='nextTerm()'>Volgende</button>
-<br>
-<div class='roundCard'>Ronde <span id='round_number'></span></div>
-</div>
-
 <img src='assets/icon-512.png' style='width: 100px; position: absolute; bottom:40px; right:40px'>
 
 
