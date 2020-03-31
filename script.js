@@ -2,7 +2,7 @@ var leden = db.collection("leden").doc("2WZA7jq9QM4YfaQfzmVg")
 var events = db.collection("events").doc("w53rEPYliAS9TeEZWmne")
 var stamnames = db.collection("stamnaam").doc("RNO5xfQXLWlyzu4HW75c")
 var game =  db.collection("hermansgames").doc("games")
-game.OnDisconnect(game.update({'ping': 100}))
+
 var currentUser = ''
 var userStage =0;
 var field = firebase.firestore.FieldValue
@@ -96,7 +96,7 @@ function nextRound(){
   game.get().then(function(doc){
     var terms_copy = doc.data().terms_copy
     var terms = doc.data().terms
-    game.update({'stage': stage + 1,  'terms': terms.concat(terms_copy), 'terms_copy': []})
+    game.update({'stage': stage + 1,  'terms': terms.concat(terms_copy), 'terms_copy': [], 'kijken':false})
   })
 }
 function newGame(){
