@@ -31,7 +31,7 @@ function stuur(){
     alert('Je moet wel iets invullen!')
     return;
   }
-  if($('#card').val() > 20){
+  if($('#card').val() > 30){
     alert('MAND')
     return;
   }
