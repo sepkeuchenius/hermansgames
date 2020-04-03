@@ -111,7 +111,7 @@ function next(){
   })
 }
 function scoreMin(){
-  alert('Hoi Berend')
+  // alert('Hoi Berend')
   $('#scoreCard').text(Number($('#scoreCard').text()) - 1)}
 function scorePlus(){ $('#scoreCard').text(Number($('#scoreCard').text()) + 1)}
 function nextRound(){
