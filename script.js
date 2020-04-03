@@ -133,6 +133,7 @@ function newGame(){
   show();
 }
 function startTimer(){
+  alert('test')
   var interval;
   var i = 59
   interval =window.setInterval(function(){
