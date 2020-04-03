@@ -31,6 +31,10 @@ function stuur(){
     alert('Je moet wel iets invullen!')
     return;
   }
+  if($('#card').val() > 20){
+    alert('MAND')
+    return;
+  }
   if($('#card').val() == 'ikbenbaas'){
     $('#actions').show()
   }
