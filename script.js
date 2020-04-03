@@ -132,9 +132,11 @@ function newGame(){
   $('#scoreCard').text(0)
   show();
 }
-var started = false;
+
 function startTimer(){
   var interval;
+  $('timerbutton').hide()
+
   var i = 58
   $('#time').text(i)
   interval =window.setInterval(function(){
@@ -147,5 +149,4 @@ function startTimer(){
     $('#time').text(60)
   }, 59000)
 
-  $('timerbutton').hide()
 }
