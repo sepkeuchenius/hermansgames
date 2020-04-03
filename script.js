@@ -31,6 +31,9 @@ function stuur(){
     alert('Je moet wel iets invullen!')
     return;
   }
+  if($('#card').val() == 'ikbenbaas'){
+    $('#actions').show()
+  }
   game.update({'terms': field.arrayUnion($('#card').val())})
   $('#stuur').text('Gelukt')
   window.setTimeout(function(){
