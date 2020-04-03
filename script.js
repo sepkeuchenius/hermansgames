@@ -137,7 +137,7 @@ function startTimer(){
   var interval;
   $('#timebutton').hide()
 
-  var i = 59.99
+  var i = 29.99
   $('#time').text(i.toFixed(2))
   interval = window.setInterval(function(){
     i = i - 0.01
