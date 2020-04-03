@@ -133,7 +133,7 @@ function newGame(){
   show();
 }
 function startTimer(){
-  alert('test')
+
   var interval;
   var i = 58
   $('#time').text(i)
