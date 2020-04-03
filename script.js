@@ -27,6 +27,7 @@ game.onSnapshot(function(doc){
 //   game.update({'ping': Math.random()})
 // }, 1000)
 function stuur(){
+  //if already in list, bounce
   if($('#card').val().length == 0){
     alert('Je moet wel iets invullen!')
     return;
@@ -37,6 +38,7 @@ function stuur(){
   }
   if($('#card').val() == 'ikbenbaas'){
     $('#actions').show()
+    return;
   }
   game.update({'terms': field.arrayUnion($('#card').val())})
   $('#stuur').text('Gelukt')
