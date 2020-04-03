@@ -56,7 +56,7 @@ function show(){
     }
     var term = terms[Math.floor(Math.random()*terms.length)];
 
-    console.log(term);
+    // console.log(term);
     //remove term from terms list
     game.update({'terms': field.arrayRemove(term), 'kijken': true});
     showing = true;
