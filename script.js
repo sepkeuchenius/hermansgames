@@ -135,7 +135,8 @@ function newGame(){
 function startTimer(){
   alert('test')
   var interval;
-  var i = 59
+  var i = 58
+  $('#time').text(i)
   interval =window.setInterval(function(){
     $('#time').text(i)
     i--
