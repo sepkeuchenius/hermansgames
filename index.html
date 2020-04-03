@@ -15,33 +15,42 @@
     <img src='assets/icon-512.png' style='width: 40px;' id='logo'>
   <h4 id='header'>Hermansgames &nbsp<span style='color: rgb(76,175,80);'>#online</span></h4>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
-  <input class="mdl-textfield__input" type="text" id="card">
-  <label class="mdl-textfield__label" for="card">Kaartje</label>
-</div>
-<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' id='stuur' onclick='stuur()'>Stuur</button>
+
 </div>
 <div id='cards'>
-  <h5>Pak een kaart</h5>
+  <p style='margin-bottom: 5px !important;'>Pak een kaart als je aan de beurt bent</p>
 
   <div id='termCard'>?</div>
   <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' id= 'show' onclick='show()'>Toon</button>
   <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' onclick='next()'>Volgende</button>
 
 </div>
-<div id= 'score'>
-  <h5 class="score">Score</h5>
+<div id="newCard">
+  <p>Nieuw kaartje in de hoed</p>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
+<input class="mdl-textfield__input" type="text" id="card">
+<label class="mdl-textfield__label" for="card">Kaartje</label>
+</div>
+<button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect' id='stuur' onclick='stuur()'>Stuur</button>
+</div>
+  <div id= 'score'>
+    <div id='left'>
+  <p class="score">Score</p><br>
+  <!-- Elk kaartje dat je raadt is een punt -->
   <div id='scorekeeper'>
-    <center>
+    <!-- <center> -->
   <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect score button' onclick='scoreMin()'>-</button>
   <div id='scoreCard' class="score">0</div>
   <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect score button' onclick='scorePlus()'>+</button>
-</center>
+<!-- </center> -->
 </div>
+
 </div>
 <div id='ronde'>
-<h5>Ronde <span id='round'>1</span></h5>
+<p>Ronde</p><span id='round' style="float: left; font-size: 1.5em; margin-top: 7px !important;">1</span>
 </div>
+</div>
+
 <div id='actions'>
   <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect score red' onclick='newGame()'>Nieuw Spel</button>
   <button class='mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect score red' onclick='nextRound()'>Volgende Ronde</button>

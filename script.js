@@ -3,7 +3,9 @@ var events = db.collection("events").doc("w53rEPYliAS9TeEZWmne")
 var stamnames = db.collection("stamnaam").doc("RNO5xfQXLWlyzu4HW75c")
 var game =  db.collection("hermansgames").doc("games")
 
-var currentUser = ''
+
+// window.onunload = pageleave;
+// var currentUser = prompt('Name')
 var userStage =0;
 var field = firebase.firestore.FieldValue
 var currentTerm;
@@ -11,12 +13,16 @@ var ready = false;
 var yourturn = false;
 var stage;
 var showing = false;
+var online;
+var count  = 1;
+var jumpin = new Date().getTime();
+var dif = jumpin - (Math.floor(jumpin / 1000) * 1000)
+// console.log(dif)
+
 game.onSnapshot(function(doc){
   reload(doc.data())
 })
-game.get().then(function (doc) {
-  reload(doc.data())
-})
+
 // window.setInterval(function(){
 //   game.update({'ping': Math.random()})
 // }, 1000)
@@ -31,8 +37,13 @@ function stuur(){
 function reload(data){
 
   stage = data.stage;
-  console.log(stage)
   $('#round').text(stage)
+  if(!data.term_online){
+    $('#newCard').hide()
+  }
+  else{
+    $('#newCard').show()
+  }
 }
 function show(){
   if(!showing){
@@ -66,7 +77,9 @@ else{
 }
 }
 function next(){
+  if(currentTerm){
   game.update({'terms_copy': field.arrayUnion(currentTerm)});
+}
   game.get().then(function(doc){
     var terms = doc.data().terms
     //get random term
