@@ -114,5 +114,6 @@ function nextRound(){
 }
 function newGame(){
   game.update({'stage': 1,  'terms': [], 'terms_copy': []})
+  $('#scoreCard').text(0)
   show();
 }
