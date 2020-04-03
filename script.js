@@ -135,7 +135,7 @@ function newGame(){
 
 function startTimer(){
   var interval;
-  $('timerbutton').hide()
+  $('#timebutton').hide()
 
   var i = 58
   $('#time').text(i)
