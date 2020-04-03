@@ -126,5 +126,6 @@ function startTimer(){
   },1000)
   window.setTimeout(function(){
     clearInterval(interval)
+    $('#time').text(60)
   }, 59000)
 }
