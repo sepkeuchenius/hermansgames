@@ -110,7 +110,9 @@ function next(){
     $('#termCard').text(term)
   })
 }
-function scoreMin(){ $('#scoreCard').text(Number($('#scoreCard').text()) - 1)}
+function scoreMin(){
+  alert('Hoi Berend')
+  $('#scoreCard').text(Number($('#scoreCard').text()) - 1)}
 function scorePlus(){ $('#scoreCard').text(Number($('#scoreCard').text()) + 1)}
 function nextRound(){
   game.get().then(function(doc){
