@@ -27,6 +27,10 @@ game.onSnapshot(function(doc){
 //   game.update({'ping': Math.random()})
 // }, 1000)
 function stuur(){
+  if($('#card').val().length == 0){
+    alert('Je moet wel iets invullen!')
+    return;
+  }
   game.update({'terms': field.arrayUnion($('#card').val())})
   $('#stuur').text('Gelukt')
   window.setTimeout(function(){
