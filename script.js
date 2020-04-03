@@ -132,8 +132,8 @@ function newGame(){
   $('#scoreCard').text(0)
   show();
 }
+var started = false;
 function startTimer(){
-
   var interval;
   var i = 58
   $('#time').text(i)
@@ -143,6 +143,9 @@ function startTimer(){
   },1000)
   window.setTimeout(function(){
     clearInterval(interval)
+    $('timerbutton').show()
     $('#time').text(60)
   }, 59000)
+
+  $('timerbutton').hide()
 }
