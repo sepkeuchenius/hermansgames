@@ -139,7 +139,7 @@ function startTimer(){
 
   var i = 58
   $('#time').text(i)
-  interval =window.setInterval(function(){
+  interval = window.setInterval(function(){
     $('#time').text(i)
     i--
   },1000)
