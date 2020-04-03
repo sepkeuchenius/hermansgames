@@ -138,11 +138,11 @@ function startTimer(){
   $('#timebutton').hide()
 
   var i = 58
-  $('#time').text(i)
+  $('#time').text(i.toFixed(2))
   interval = window.setInterval(function(){
-    $('#time').text(i)
-    i--
-  },1000)
+    i = i - 0.01
+    $('#time').text(i.toFixed(2))
+  },10)
   window.setTimeout(function(){
     clearInterval(interval)
     $('#timebutton').show()
