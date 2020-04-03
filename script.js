@@ -117,3 +117,14 @@ function newGame(){
   $('#scoreCard').text(0)
   show();
 }
+function startTimer(){
+  var interval;
+  var i = 59
+  interval =window.setInterval(function(){
+    $('#time').text(i)
+    i--
+  },1000)
+  window.setTimeout(function(){
+    clearInterval(interval)
+  }, 59000)
+}
