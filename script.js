@@ -145,7 +145,7 @@ function startTimer(){
   },1000)
   window.setTimeout(function(){
     clearInterval(interval)
-    $('timerbutton').show()
+    $('#timebutton').show()
     $('#time').text(60)
   }, 59000)
 
