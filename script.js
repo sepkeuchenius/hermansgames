@@ -156,7 +156,7 @@ function startTimer(){
   window.setTimeout(function(){
     clearInterval(interval)
     $('#timebutton').show()
-    $('#time').text(60)
-  }, 59000)
+    $('#time').text(29.99)
+  }, 29990)
 
 }
