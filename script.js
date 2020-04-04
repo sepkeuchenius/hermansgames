@@ -28,6 +28,7 @@ game.onSnapshot(function(doc){
 // }, 1000)
 function stuur(){
   //if already in list, bounce
+
   if($('#card').val().length == 0){
     alert('Je moet wel iets invullen!')
     return;
@@ -40,12 +41,21 @@ function stuur(){
     $('#actions').show()
     return;
   }
-  game.update({'terms': field.arrayUnion($('#card').val())})
-  $('#stuur').text('Gelukt')
-  window.setTimeout(function(){
-      $('#stuur').text('Stuur')
-  },1000)
-  $('#card').val('')
+  game.get().then(function(doc){
+    if(doc.data().terms.indexOf($('#card').val()) != -1){
+      alert('Ooeps, deze is al ingestuurd!')
+      return;
+    }
+    else{
+      game.update({'terms': field.arrayUnion($('#card').val())})
+      $('#stuur').text('Gelukt')
+      window.setTimeout(function(){
+          $('#stuur').text('Stuur')
+      },1000)
+      $('#card').val('')
+    }
+  })
+
 }
 function reload(data){
 
