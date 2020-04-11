@@ -152,6 +152,9 @@ function startTimer(){
   interval = window.setInterval(function(){
     i = i - 0.01
     $('#time').text(i.toFixed(2))
+    var perc = (1 - (i / 30))*100;
+
+    $('#bar').width(perc + '%')
   },10)
   window.setTimeout(function(){
     clearInterval(interval)
