@@ -61,11 +61,11 @@ function reload(data){
 
   stage = data.stage;
   $('#round').text(stage)
-  if(!data.term_online){
-    $('#newCard').hide()
+  if(data.term_online){
+    $('#newCard').show()
   }
   else{
-    $('#newCard').show()
+    $('#newCard').hide()
   }
 }
 function show(){
@@ -157,6 +157,16 @@ function startTimer(){
     clearInterval(interval)
     $('#timebutton').show()
     $('#time').text(29.99)
+    show();
+    $('#playbutton').show()
+    $('#cards').hide();
   }, 29990)
 
+}
+$('#playbutton').on('click', startturn);
+function startturn(){
+  startTimer();
+  $('#playbutton').hide()
+  $('#cards').show();
+  show()
 }

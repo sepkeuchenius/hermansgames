@@ -17,44 +17,39 @@
 
 
 </div>
-<div id='cards'>
-  <p style='margin-bottom: 5px !important;'>Pak een kaart als je aan de beurt bent</p>
+<div id='cards' style="display:none">
+
 
   <div id='termCard'>?</div>
-  <button class='mdl-button mdl-js-button mdl-button--primary ' id= 'show' onclick='show()'>Toon</button>
+<center>
   <button class='mdl-button mdl-js-button mdl-button--primary ' onclick='next()'>Volgende</button>
+</center>
 
 </div>
-<div id="newCard">
-  <p>Nieuw kaartje in de hoed</p>
-<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="max-width:60%;">
+<i class= 'material-icons' id='playbutton'>play_arrow</i>
+
+  <div id= 'score'>
+  <p class="score">Score</p><br>
+  <div id='scorekeeper'>
+  <div id='scoreCard' class="score">0</div>
+  <button class='mdl-button mdl-js-button mdl-button--primary  score button' onclick='scorePlus()'>+</button>
+</div>
+</div>
+<div id='ronde'>
+<p>Ronde</p><span id='round' style="float: left; font-size: 1.5em; margin-top: 7px !important;width:100%; text-align: center;">1</span>
+</div>
+<div id="newCard" style="display:none;">
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:70%;">
 <input class="mdl-textfield__input" type="text" id="card">
 <label class="mdl-textfield__label" for="card">Kaartje</label>
 </div>
-<button class='mdl-button mdl-js-button mdl-button--primary ' id='stuur' onclick='stuur()'>Stuur</button>
-</div>
-  <div id= 'score'>
-    <div id='left'>
-  <p class="score">Score</p><br>
-  <!-- Elk kaartje dat je raadt is een punt -->
-  <div id='scorekeeper'>
-    <!-- <center> -->
-  <button class='mdl-button mdl-js-button mdl-button--primary  score button' onclick='scoreMin()'>-</button>
-  <div id='scoreCard' class="score">0</div>
-  <button class='mdl-button mdl-js-button mdl-button--primary  score button' onclick='scorePlus()'>+</button>
-<!-- </center> -->
-</div>
-
-</div>
-<div id='ronde'>
-<p>Ronde</p><span id='round' style="float: left; font-size: 1.5em; margin-top: 7px !important;">1</span>
-</div>
+<button class='mdl-button mdl-js-button mdl-button--primary ' id='stuur' onclick='stuur()' style="width:25%">Stuur</button>
 </div>
 <div id='timer'>
-  <p>Timer</p>
-  <center><h4 id='time'>29.99</h4></center>
-  <button class='mdl-button mdl-js-button mdl-button--primary' onclick='startTimer()' id="timebutton">Start</button>
-
+  <center>
+  <h4 id="timetext"><span  id='time'>29.99</span><br> <span style="font-size: 70%;">sec</span></h4>
+  <!-- <button class='mdl-button mdl-js-button mdl-button--primary' onclick='startTimer()' id="timebutton">Start</button> -->
+</center>
 </div>
 
 <div id='actions' style='display:none'>

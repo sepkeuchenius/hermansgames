@@ -4,7 +4,7 @@ body{
 #landing{
   /* padding-left: 40%; */
 }
-#home, #invullen, #waiting, #lastCount, #round, #sleepingRound, #cards, #score{
+#home, #invullen, #waiting, #lastCount, #sleepingRound, #cards{
   padding-left: 40px;
 }
 #leave{
@@ -27,6 +27,10 @@ body{
 }
 .green{
   color: rgb(76,175,80);
+}
+#cards{
+  margin-top: 100px;
+  padding-left: 0;
 }
 #countdown{
   color: rgb(76,175,80);
@@ -64,7 +68,7 @@ body{
   padding-bottom: 40px;
   margin-bottom: 25px;
   margin-top:20px;
-}#cards, #score, #actions, #newCard, #timer{
+}#actions, #newCard, #timer{
   /* text-align: center; */
   background: white;
   width: 90%;
@@ -76,13 +80,19 @@ body{
   border-radius: 5px;
   margin-top: 20px;
 }
+#score{
+  /* margin-left: 40px; */
+  position: absolute;
+  bottom:0px;
+  left:20px;
+}
 
 #scorekeeper{
   /* margin-left: 100px; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 .score{
-  display: inline-block;
+  /* display: inline-block; */
 }
 .button{
   font-size: 2em !important;
@@ -96,8 +106,8 @@ body{
 
 }
 .score, #scorekeeper{
-  /* margin: 0 auto; */
-  /* display: inline-block; */
+  margin: 0 auto;
+  display: inline-block;
 }
 .red{
   color: red !important;
@@ -114,9 +124,12 @@ text-align: center;
 width: 90%;
 }
 #ronde{
-  width: 30%;
+  /* width: 30%; */
   /* padding-left: 40px; */
-  margin: 0 auto;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  /* margin: 0 auto; */
 }
 #logo, #header{
   display: inline-block;
@@ -133,13 +146,28 @@ text-align: left;
 margin: 0 !important;
 margin-top: 5px !important;
 }
-#score{
-  display: flex;
-}
-#left{
-  width: 70%;
-  float:left;
-}
-#time, #timebutton{
+#timetext, #timebutton{
   display: inline-block;
+}
+#timetext{
+  /* float:right; */
+  position: relative;
+  margin-top:30px;
+  line-height: 40px;
+  /* bottom:20px; */
+}
+#timer{
+  border-radius: 50%;
+  width:130px;
+  height:130px;
+  position: absolute;
+  bottom:20px;
+  left: calc(50% - 65px);
+}
+#timebutton{
+  margin-top: 10px;
+}
+#playbutton{
+  position:absolute; height:100px; width:100px; left: calc(50% - 50px); top:calc(50%  - 100px); color: rgb(76, 175, 80); font-size:100px;
+  cursor:pointer;
 }
