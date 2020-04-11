@@ -58,7 +58,7 @@ body{
 #termCard{
   text-align: center;
   width: 90%;
-  background: #eee;
+  /* background: #eee; */
   font-size: 2em;
   color: rgb(76, 175, 80);
   /* margin: 0  auto; */
